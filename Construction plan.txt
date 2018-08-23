@@ -74,3 +74,15 @@ iptables -t nat -A PREROUTING -p tcp -m tcp --dport 443 -j DNAT --to-destination
 iptables -t nat -A PREROUTING -p udp -m udp --dport 443 -j DNAT --to-destination 52.175.54.186:443
 iptables -t nat -A POSTROUTING -d 52.175.54.186 -p tcp -m tcp --dport 443 -j SNAT --to-source 10.0.0.4
 iptables -t nat -A POSTROUTING -d 52.175.54.186 -p udp -m udp --dport 443 -j SNAT --to-source 10.0.0.4
+//iptables开机加载
+iptables-save > /etc/iptables.up.rules
+echo -e '#!/bin/bash\n/sbin/iptables-restore < /etc/iptables.up.rules' > /etc/network/if-pre-up.d/iptables
+chmod +x /etc/network/if-pre-up.d/iptables
+//iptables保存
+iptables-save > /etc/iptables.up.rules
+//查看NAT规则
+iptables -t nat -vnL POSTROUTING
+iptables -t nat -vnL PREROUTING
+//删除NAT规则
+iptables -t nat -D POSTROUTING 1
+iptables -t nat -D PREROUTING 1
