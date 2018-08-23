@@ -26,6 +26,7 @@ vim /etc/ssh/sshd_config
 *PermitRootLogin yes
 *PubkeyAuthentication yes
 *PasswordAuthentication yes
+/etc/init.d/ssh restart
 //socks5
 wget --no-check-certificate https://raw.github.com/Lozy/danted/master/install.sh -O socks5.sh
 bash socks5.sh --port=999 --user=admin --passwd=admin
