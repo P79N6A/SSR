@@ -60,11 +60,11 @@ vi /etc/shadowsocks.json
     "protocol":"auth_aes128_md5",
     "protocol_param":"443",
     "obfs":"tls1.2_ticket_auth",
-    "obfs_param":"itunes.apple.com/cn/app/69",
+    "obfs_param":"itunes.apple.com/cn/app/65",
 	
     "dns_ipv6":false,
     "connect_verbose_info":1,
-    "redirect":["*:443#itunes.apple.com/cn/app/69:443"],
+    "redirect":["*:443#itunes.apple.com/cn/app/65:443"],
     "dns_ipv6":false,
     "fast_open":false,
     "workers":1
