@@ -1,4 +1,6 @@
 #搭建方案
+//安装纯净系统前准备
+apt-get update
 //安装纯净系统
 apt-get install -y xz-utils openssl gawk file
 wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' && chmod a+x InstallNET.sh
@@ -29,7 +31,7 @@ vim /etc/ssh/sshd_config
 /etc/init.d/ssh restart
 //socks5
 wget --no-check-certificate https://raw.github.com/Lozy/danted/master/install.sh -O socks5.sh
-bash socks5.sh --port=999 --user=admin --passwd=admin
+bash socks5.sh --port=543 --user=admin --passwd=admin
 /etc/init.d/sockd status
 //魔改BBR
 wget -N --no-check-certificate "https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh" && chmod +x tcp.sh && ./tcp.sh
