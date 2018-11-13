@@ -33,6 +33,8 @@ vim /etc/ssh/sshd_config
 wget --no-check-certificate https://raw.github.com/Lozy/danted/master/install.sh -O socks5.sh
 bash socks5.sh --port=543 --user=admin --passwd=admin
 /etc/init.d/sockd status
+// MTProxy
+wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/mtproxy.sh && chmod +x mtproxy.sh && bash mtproxy.sh
 //魔改BBR
 wget -N --no-check-certificate "https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh" && chmod +x tcp.sh && ./tcp.sh
 //anycoonect
